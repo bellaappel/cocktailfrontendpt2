@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import CocktailCard from '../components/CocktailCard'
 
 export default class CocktailContainer extends Component {
 
@@ -9,15 +10,24 @@ export default class CocktailContainer extends Component {
         console.log("COMPONENT DID MOUNT");
         fetch("http://localhost:3000/cocktails")
         .then(res => res.json())
-        .then(cocktailssObj => this.setState({cocktails: cocktailsObj}))
+        .then(cocktailsObj => this.setState({cocktails: cocktailsObj}))
+    }
+
+    renderCocktails(){
+        return(
+            <div>
+                {this.state.cocktails.map(cocktailsObj => <CocktailCard key={cocktailsObj.name + "-card"} name={cocktailsObj.name} image={cocktailsObj.photo}/>)}
+            </div>
+        )
+
     }
 
  
 
     render() {
         return (
-            <div>
-                
+            <div className="cocktail-container">
+                {this.renderCocktails()}
             </div>
         )
     }

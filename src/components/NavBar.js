@@ -6,6 +6,7 @@ export default class NavBar extends Component {
         return (
             <div className="nav-bar">
                 <NavLink to="/">Home</NavLink>
+                <NavLink to="/cocktails">Cocktails</NavLink>
                 
             </div>
         )
