@@ -10,6 +10,7 @@ import{
 } from 'react-router-dom'
 import NavBar from './components/NavBar'
 import Header from './components/Header'
+import RecipesContainer from './containers/RecipesContainer';
  
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <NavBar/>
           <Route exact path="/" component={Home} />
           <Route exact path="/cocktails" component={CocktailContainer} />
+          <Route exact path="/recipes" component={RecipesContainer} />
       </Router>
      
     </div>
