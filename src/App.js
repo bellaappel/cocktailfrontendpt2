@@ -11,19 +11,22 @@ import{
 import NavBar from './components/NavBar'
 import Header from './components/Header'
 import RecipesContainer from './containers/RecipesContainer';
+import LiquorContainer from './containers/LiquorContainer'
  
 
 function App() {
   return (
     <div className="wrapper">
       <Header/>
-      <SearchBar/>
       <Router>
         <NavBar/>
+        <SearchBar/>
           <Route exact path="/" component={Home} />
           <Route exact path="/cocktails" component={CocktailContainer} />
           <Route exact path="/recipes" component={RecipesContainer} />
+          <Route exact path="/liquors" component={LiquorContainer} />
       </Router>
+      
      
     </div>
   );

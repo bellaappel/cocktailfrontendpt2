@@ -15,7 +15,7 @@ export default class CocktailContainer extends Component {
 
     renderCocktails(){
         return(
-            <div>
+            <div className="container">
                 {this.state.cocktails.map(cocktailsObj => <CocktailCard key={cocktailsObj.name + "-card"} name={cocktailsObj.name} image={cocktailsObj.photo}/>)}
             </div>
         )
@@ -26,7 +26,7 @@ export default class CocktailContainer extends Component {
 
     render() {
         return (
-            <div className="cocktail-container">
+            <div className="container">
                 {this.renderCocktails()}
             </div>
         )

@@ -68,3 +68,14 @@ p {
     background-color: #ddd;
     color: black;
 }
+
+
+#search-bar {
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
