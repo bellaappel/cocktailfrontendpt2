@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import CocktailCard from '../components/CocktailCard';
+import SingleCocktailPage from '../components/SingleCocktailPage';
 import {connect} from 'react-redux';
 import {fetchCocktails} from '../actions/cocktailsActions';
-import CocktailsList from '../components/CocktailsList'
+import CocktailCard from '../components/CocktailCard'
 import {
     BrowserRouter as Router,
     Switch,
@@ -49,14 +49,14 @@ class CocktailContainer extends Component {
         return (
             <Switch>
                 <Route exact path='/cocktails'>
-                    <CocktailsList/>
+                    <CocktailCard />
                 </Route>
-                <Route path='/cocktails/:id' component={(routeData) => {
-                    const id= parseInt(routeData.match,params.id)
+                {/* <Route path='/cocktails/:id' component={(routeData) => {
+                    const id = parseInt(routeData.match.params.id)
                     const cocktail = this.props.cocktails.find(i => i.id === id)
                     return !! cocktail ? <CocktailCard cocktail={cocktail} id={id}/> : <div>404 page not found</div>
                 }
-            } />
+            } /> */}
 
             </Switch>
         )

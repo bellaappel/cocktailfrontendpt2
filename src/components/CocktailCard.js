@@ -1,14 +1,42 @@
-import React, {Component } from 'react'
+import React, { Component } from 'react'
+import {connect} from 'react-redux'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 
-const CocktailCard = (props) => {
+class CocktailCard extends Component {
+    render() {
+        const cocktails = this.props.cocktails.map(cocktail => <li key={cocktail.id}><Link to={{pathname: `/cocktails/${cocktail.id}`}}>{cocktail.name}</Link></li>)
         return (
-            <div className="card">
-                <h2>{props.cocktail.name}</h2>
-                <h2>{props.cocktail.photo}</h2>
-                <h3>Recipes:</h3>
-                <ul></ul>
+            <div className="cocktailslist-container">
+                <h1>All Cocktails</h1>
+                <ul className= "cocktail-list">
+                    {cocktails}
+                </ul>
             </div>
         )
+    }
 }
 
-export default CocktailCard
+
+
+export default connect((state) => {
+    return {cocktails: state.cocktails}
+})(CocktailCard)
+
+// import React from 'react'
+// import {Link} from "react-router-dom"
+
+// class CocktailCard = ({cocktail}) => {
+//     return (
+//     <div className="cocktailcard">
+//         <Link to={{pathname: `/cocktails/${cocktail.id}`}}>{cocktail.name}</Link>
+
+//     </div>
+//     )
+// }
+
+
