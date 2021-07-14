@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import RecipesContainer from '../containers/AddRecipeForm'
 
 export const SingleCocktailPage = ({match}) => {
 
@@ -10,11 +11,8 @@ export const SingleCocktailPage = ({match}) => {
             <div className="card">
                 <h1>{console.log(cocktail)}</h1>
                 <h1>{cocktail.name}</h1>
-                <h1>Cocktail</h1>
-               
-             
-                <h3>Recipes:</h3>
-              
+                <h3>Add a Recipe:</h3>
+                <RecipesContainer/>  
             </div>
         )
 }

@@ -1,28 +1,34 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import LiquorCard from '../components/LiquorCard'
+import {fetchLiquors} from '../actions/liquorsActions'
+import {connect} from 'react-redux'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+  } from "react-router-dom";
 
-export default class LiquorContainer extends Component {
-    state =  {liquor: []}
+class LiquorContainer extends Component {
 
-    componentDidMount(){
-        fetch("http://localhost:3000/liquors")
-        .then(res => res.json())
-        .then(liquorObj => this.setState({liquor: liquorObj}))
-
+        componentDidMount() {
+        this.props.fetchLiquors()
     }
 
-    renderLiquors(){
-        return(
-            <div>
-                {this.state.liquor.map(liquorObj => <LiquorCard key={liquorObj.name + "-card"} name={liquorObj.name}/>)}
-            </div>
-        )
-    }
     render() {
         return (
-            <div className="container">
-                {this.renderLiquors()}
-            </div>
+            <Switch>
+                <Route exact path='/liquors'>
+                    <LiquorCard />
+                </Route>
+            </Switch>
         )
     }
+} 
+
+const mapStateToProps = state => {
+    return {
+        liquors: state.liquors
+    }
 }
+export default connect(mapStateToProps, {fetchLiquors})(LiquorContainer)
+

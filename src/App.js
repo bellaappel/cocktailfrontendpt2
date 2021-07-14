@@ -10,10 +10,10 @@ import{
 } from 'react-router-dom'
 import NavBar from './components/NavBar'
 import Header from './components/Header'
-import RecipesContainer from './containers/RecipesContainer';
+import RecipesContainer from './containers/AddRecipeForm';
 import LiquorContainer from './containers/LiquorContainer'
-import CocktailCard from './components/SingleCocktailPage';
 import {SingleCocktailPage} from './components/SingleCocktailPage';
+import {SingleLiquorPage} from './components/SingleLiquorPage'
  
 
 function App() {
@@ -29,6 +29,7 @@ function App() {
           <Route exact path="/cocktails/:cocktailId" component={SingleCocktailPage} />
           <Route exact path="/recipes" component={RecipesContainer} />
           <Route exact path="/liquors" component={LiquorContainer} />
+          <Route exact path="/liquors/:liquorsId" component={SingleLiquorPage} />
         </Switch>
       </Router>
       
