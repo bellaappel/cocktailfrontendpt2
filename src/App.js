@@ -10,7 +10,7 @@ import{
 } from 'react-router-dom'
 import NavBar from './components/NavBar'
 import Header from './components/Header'
-import RecipesContainer from './containers/AddRecipeForm';
+import RecipeContainer from './containers/RecipeContainer'
 import LiquorContainer from './containers/LiquorContainer'
 import {SingleCocktailPage} from './components/SingleCocktailPage';
 import {SingleLiquorPage} from './components/SingleLiquorPage'
@@ -27,7 +27,7 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/cocktails" component={CocktailContainer}/>
           <Route exact path="/cocktails/:cocktailId" component={SingleCocktailPage} />
-          <Route exact path="/recipes" component={RecipesContainer} />
+          <Route exact path="/recipes" component={RecipeContainer} />
           <Route exact path="/liquors" component={LiquorContainer} />
           <Route exact path="/liquors/:liquorsId" component={SingleLiquorPage} />
         </Switch>

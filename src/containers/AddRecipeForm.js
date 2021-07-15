@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addRecipes } from '../actions/recipesActions'
 
+
 class AddRecipeForm extends Component {
 
     state = {
         cocktail_id: '',
-        liquor_id: '',
         instructions: '',
-        glassware: ''
+        creator: ''
     }
 
     handleChange = e => {
@@ -25,9 +25,8 @@ class AddRecipeForm extends Component {
 
         this.setState({
             cocktail_id: '',
-            liquor_id: '',
             instructions: '',
-            glassware: ''
+            creator: ''
         })
        
     }
@@ -37,19 +36,15 @@ class AddRecipeForm extends Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                        <label>Cocktail</label>
+                        <label>Creator</label>
                         <br />
-                        <input type="text" value={this.state.cocktail_id} onChange={this.handleChange} name="cocktail_id"/>
-                        <br />
-                        <label>Liquors</label>
-                        <br />
-                        <input type="text" value={this.state.liquor_id} onChange={this.handleChange} name="liquor_id"/>
+                        <input type="text" value={this.state.creator} onChange={this.handleChange} name="creator"/>
                         <br />
                         <label>instructions</label>
                         <br />
                         <textarea rows="5" cols="30" value={this.state.instructions} onChange={this.handleChange} name="instructions" />
                         <br />
-                    <input type="submit" value="Submit Review" />
+                    <input type="submit" value="Submit Recipe" />
                 </form>
             </div>
         );
