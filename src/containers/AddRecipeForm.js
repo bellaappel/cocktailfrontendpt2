@@ -7,6 +7,7 @@ class AddRecipeForm extends Component {
 
     state = {
         cocktail_id: '',
+        title: '',
         instructions: '',
         creator: ''
     }
@@ -25,6 +26,7 @@ class AddRecipeForm extends Component {
 
         this.setState({
             cocktail_id: '',
+            itle: '',
             instructions: '',
             creator: ''
         })
@@ -39,6 +41,10 @@ class AddRecipeForm extends Component {
                         <label>Creator</label>
                         <br />
                         <input type="text" value={this.state.creator} onChange={this.handleChange} name="creator"/>
+                        <br />
+                        <label>Title</label>
+                        <br />
+                        <input type="text" value={this.state.title} onChange={this.handleChange} name="title"/>
                         <br />
                         <label>instructions</label>
                         <br />

@@ -2,6 +2,7 @@ import SearchBar from './components/SearchBar'
 import './App.css';
 import Home from './components/Home'
 import CocktailContainer from './containers/CocktailContainer'
+import './stylesheets/navbar.css'
 import{
   BrowserRouter as Router,
   Switch,
@@ -14,6 +15,8 @@ import RecipeContainer from './containers/RecipeContainer'
 import LiquorContainer from './containers/LiquorContainer'
 import {SingleCocktailPage} from './components/SingleCocktailPage';
 import {SingleLiquorPage} from './components/SingleLiquorPage'
+import { SingleRecipePage } from './components/SingleRecipePage';
+import AddCocktailForm from './containers/AddCocktailForm';
  
 
 function App() {
@@ -26,10 +29,12 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/cocktails" component={CocktailContainer}/>
+          <Route exact path="/addCocktail" component={AddCocktailForm}/>
           <Route exact path="/cocktails/:cocktailId" component={SingleCocktailPage} />
           <Route exact path="/recipes" component={RecipeContainer} />
+          <Route exact path="/recipes/:recipeId" component={SingleRecipePage} />
           <Route exact path="/liquors" component={LiquorContainer} />
-          <Route exact path="/liquors/:liquorsId" component={SingleLiquorPage} />
+          <Route exact path="/liquors/:liquorId" component={SingleLiquorPage} />
         </Switch>
       </Router>
       

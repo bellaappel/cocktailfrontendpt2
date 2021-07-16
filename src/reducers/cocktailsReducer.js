@@ -2,7 +2,9 @@ export const cocktailsReducer = (state = [], action) => {
     switch(action.type){
         case 'FETCH_COCKTAILS':
             return action.payload
-            default:
-            return state
+        case 'ADD_COCKTAIL':
+            return[...state, action.payload]
+        default: 
+        return state
     }
 }

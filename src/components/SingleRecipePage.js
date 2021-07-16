@@ -5,12 +5,12 @@ export const SingleRecipePage = ({match}) => {
 
     const recipeId = match.params.recipeId
    
-    const recipe = useSelector(state => state.recipess.find(recipe => recipe.id.toString()=== recipeId))
+    const recipe = useSelector(state => state.recipes.find(recipe => recipe.id.toString()=== recipeId))
         return (
             <div className="card">
                 <h1>{console.log(recipe)}</h1>
-                <h1>{recipe.name}</h1>
-                <h2>{recipe.desc}</h2>
+                <h1>{recipe.title}</h1>
+                <h2>{recipe.instructions}</h2>
             </div>
         )
 }

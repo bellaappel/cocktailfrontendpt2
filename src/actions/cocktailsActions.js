@@ -7,3 +7,15 @@ export const fetchCocktails = (dispatch) => {
     }
 }
 
+export const addCocktails = recipe => {
+    return dispatch => {
+        fetch('http://localhost:3000/cocktails', {
+        method: 'POST',
+        body: JSON.stringify(recipe),
+        headers: { 'Content-Type': 'application/json'}
+    })
+    .then(resp => resp.json())
+    .then(cocktail => dispatch({ type: 'ADD_COCKTAIL', payload: cocktail}))
+    }
+    
+}

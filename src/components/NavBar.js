@@ -1,14 +1,21 @@
 import React, { Component } from 'react'
 import {NavLink} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 export default class NavBar extends Component {
     render() {
         return (
-            <div className="nav-bar">
-                <NavLink to="/">Home</NavLink>
-                <NavLink to="/cocktails">Cocktails</NavLink>
-                <NavLink to ="/recipes">Recipes</NavLink>
-                <NavLink to ="/liquors">Liquors</NavLink>
+            <div className="navbar">
+                <Link to="/">Home</Link>
+                <div className="dropdown left">
+                    <button className="dropbtn gen">Cocktails</button>
+                    <div className="dropdown-content">
+                    <Link to="/cocktails">All Cocktails</Link>
+                    <Link to="/addCocktail">New Cocktail</Link>
+                    </div>
+                </div>
+                <Link to ="/recipes">Recipes</Link>
+                <Link to ="/liquors">Liquors</Link>
                 
             </div>
         )
