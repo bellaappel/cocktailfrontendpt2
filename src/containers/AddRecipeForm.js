@@ -26,7 +26,7 @@ class AddRecipeForm extends Component {
 
         this.setState({
             cocktail_id: '',
-            itle: '',
+            title: '',
             instructions: '',
             creator: ''
         })

@@ -1,21 +1,28 @@
-import React from 'react'
+// import React, { Component } from 'react';
 
-function SearchBar(propsObj){
+// export default class SearchBar extends Component {
+//   constructor() {
+//     super()
+//     this.state = {
+//       searchTerm: ""
+//     }
+//   }
 
-  function handleSubmit(e){
-    e.preventDefault()
-    let value = e.target["cocktail-input"].value
-    propsObj.changeStateValue(value)
-  }
+//   handleInputChange = (event) => {
+//     this.setState({
+//       [event.target.name]: event.target.value
+//     })
+//   }
 
-  return (
-    <div id="search-bar">
-        <form onSubmit={handleSubmit} id="search">
-          <input name="cocktail-input" type="text" />
-          <input type="submit" value="Search!" />
-        </form>
-    </div>
-  )
-}
+//   render() {
+//     return (
+//       <div>
+//         <form onSubmit={(event) => this.props.handleSubmit(event, this.state.searchTerm)}>
+//           <input type="text" name="searchTerm" value={this.state.searchTerm} onChange={(event) => this.handleInputChange(event)}></input>
+//           <button type="submit">Search</button>
+//         </form>
+//       </div>
+//     )
+//   }
+// }
 
-export default SearchBar

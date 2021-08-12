@@ -22,10 +22,11 @@ import AddCocktailForm from './containers/AddCocktailForm';
 function App() {
   return (
     <div className="wrapper">
-      <Header/>
+      
       <Router>
+        <Header/>
         <NavBar/>
-        <SearchBar/>
+        {/* <SearchBar/> */}
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/cocktails" component={CocktailContainer}/>

@@ -24,7 +24,7 @@ p {
 
 
 .card {
-  background-color: darksalmon;
+  background-color: white;
   flex: 0 1 24%;
   cursor: pointer;
   animation: soft-glow 1s forwards ease-in-out infinite;
@@ -43,7 +43,7 @@ p {
 #cocktail-header {
   display: flex;
   justify-content: center;
-  background: #515DA2;
+  background:pink;
   opacity: .8;
   height: 7rem;
   padding: 1rem;
@@ -52,7 +52,7 @@ p {
 
 .cocktail-avatar {
   justify-self: center;
-  height: 12rem;
+  height: 18rem;
   width: auto;
 }
 
@@ -65,4 +65,27 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.likes {
+  display: flex;
+  justify-content: center;
+}
+
+ .big-btn {
+  justify-content: center;
+  width: 90px;
+  height: 40px;
+}
+
+
+button.likebutton {
+  background-color: whitesmoke;
+  color:black;
+  font-size: 20px;
+  padding: 10px 60px;
+  border-radius: 5px;
+  margin: 10px 0px;
+  cursor: pointer;
+  justify-content: center;
 }
