@@ -8,7 +8,7 @@ export const SingleCocktailPage = ({match}) => {
 
     const cocktailId = match.params.cocktailId
    
-    const cocktail = useSelector(state => state.cocktails.find(cocktail => cocktail.id.toString()=== cocktailId))
+    const cocktail = useSelector(state => state.cocktails.find(cocktail => cocktail.id.toString() === cocktailId))
         return (
             <div className="card">
                 <h1>{console.log(cocktail)}</h1>

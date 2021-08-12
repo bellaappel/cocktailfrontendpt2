@@ -5,7 +5,7 @@ export default class Home extends Component {
         return (
             <div className="wrapper">
                 <h1>Welcome to Cocktail Book</h1>
-                <p>Here you can find classic cocktails and new recipes along with user reviews and inputs!</p>
+                <p>Here you can find classic cocktails and new recipes along with homemade user recipes!</p>
                 
             </div>
         )
