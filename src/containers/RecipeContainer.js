@@ -11,7 +11,9 @@ import {
 class RecipeContainer extends Component {
 
         componentDidMount() {
+            console.log('a')
         this.props.fetchRecipes()
+        console.log('b')
     }
 
     render() {

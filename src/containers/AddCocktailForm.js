@@ -7,7 +7,8 @@ class AddCocktailForm extends Component {
 
     state = {
        name: "",
-       desc: ""
+       desc: "",
+       formError: false
     }
 
     handleChange = e => {

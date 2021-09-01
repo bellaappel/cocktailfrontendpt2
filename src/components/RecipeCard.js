@@ -11,7 +11,7 @@ class RecipeCard extends Component {
     render() {
         
         const recipes = this.props.recipes.map(recipe => <li key={recipe.id}><Link to={{pathname: `/recipes/${recipe.id}`}}>{recipe.title}</Link></li>)
-        
+        console.log(recipes)
         return (
             <div className="recipeslist-container">
                 <h1>All recipes</h1>
