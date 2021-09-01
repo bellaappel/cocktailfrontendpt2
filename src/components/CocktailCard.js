@@ -8,12 +8,16 @@ import {
     Link
   } from "react-router-dom";
 
+
+  const white = '##FFFFFF'
+  const black = '#000000'
 class CocktailCard extends Component {
      constructor() {
         super()
         this.state = { 
             cocktails: [],
-            filter: ""
+            filter: "",
+            darkMode: white,
         }
     }
 
@@ -24,6 +28,12 @@ class CocktailCard extends Component {
             }
             )
          )
+    }
+
+
+    toggleMode = () => {
+        let backgroundColor = this.state.darkMode == white ? black : white;
+        this.setState({ darkMode: backgroundColor})
     }
 
     
@@ -44,10 +54,11 @@ class CocktailCard extends Component {
 
         
         return (
-            <div className="cocktailslist-container">
+            <div className="cocktailslist-container"  style={{background: this.state.darkMode}}>
                 <h1>All Cocktails</h1>
                 <input type="text" id="search-bar" placeholder="Search Cocktails" value={this.state.filter} onChange={e => this.setState({filter: e.target.value},  ()=>console.log(this.state))} />
                 <button onClick={this.sortAsc}> Sort Alphabetically </button>
+                <button onClick={ () => this.toggleMode()}>Dark Mode</button>
                 <ul className= "cocktail-list">
                     {cocktails}
                 </ul>
